@@ -1,3 +1,6 @@
+#first version
+#Runtime: 756ms
+#Memory 14.9 MB
 class Solution(object):
     def threeSum(self, nums):
         """
@@ -13,7 +16,8 @@ class Solution(object):
             j = i + 1
             k = len(nums)-1
             while(j < k):
-                if(nums[i]+nums[j]+nums[k] == 0):
+                temp = nums[i]+nums[j]+nums[k]
+                if(temp == 0):
                     result.append([nums[i], nums[j], nums[k]])
                     j = j + 1
                     k = k - 1
@@ -21,8 +25,36 @@ class Solution(object):
                         j = j + 1
                     while(k > j and nums[k+1] == nums[k]):
                         k = k - 1
-                elif(nums[i]+nums[j]+nums[k] < 0):
+                elif(temp < 0):
                     j = j + 1
-                elif(nums[i]+nums[j]+nums[k] > 0):
+                elif(temp > 0):
                     k = k - 1
         return result
+
+#second version
+#By using set(), we don't have to handle the lists that have already appeared
+#Runtime 1428ms
+#Memory 14.8 MB
+class Solution(object):
+    def threeSum(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        result = set()
+        nums.sort()
+        lenth = len(nums)
+        for i in range(len(nums)):
+            j = i + 1
+            k = len(nums)-1
+            while(j < k):
+                temp = nums[i]+nums[j]+nums[k]
+                if(temp == 0):
+                    result.add((nums[i], nums[j], nums[k]))
+                    j = j + 1
+                    k = k - 1
+                elif(temp < 0):
+                    j = j + 1
+                elif(temp > 0):
+                    k = k - 1
+        return list(result)
