@@ -1,3 +1,5 @@
+#Only need to save the units required to jump on ith stone.
+#This method is slow but saves a lot space
 class Solution(object):
     def canCross(self, stones):
         """
