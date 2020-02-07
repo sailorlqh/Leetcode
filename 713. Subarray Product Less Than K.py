@@ -1,3 +1,4 @@
+#using sling window to find the interval.
 class Solution(object):
     def numSubarrayProductLessThanK(self, nums, k):
         """
