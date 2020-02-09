@@ -1,3 +1,4 @@
+#use dfs and set each searched point to 0
 class Solution(object):
     def numIslands(self, grid):
         """
