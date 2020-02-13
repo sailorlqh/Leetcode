@@ -1,3 +1,4 @@
+#update another method to solve this problem
 class Solution(object):
     def isMatch(self, s, p):
         """
