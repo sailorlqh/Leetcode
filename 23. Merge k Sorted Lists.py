@@ -4,6 +4,7 @@
 #         self.val = x
 #         self.next = None
 
+#divide and conquar, merge listes two by two, i.e. merge(1,2), merge(3,4) than merge(1,3)
 class Solution(object):
     def mergeKLists(self, lists):
         """
