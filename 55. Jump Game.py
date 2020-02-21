@@ -1,4 +1,4 @@
-#Quite like a DP question
+#Quite like a DP question, but using greedy is faster
 #if a point is reachable, set value to 1
 #and check whether the end can be reached
 class Solution(object):
