@@ -1,3 +1,6 @@
+#use stack
+#whenever there is a element less than the top element in the stack
+#we pop the top element 
 class Solution(object):
     def removeKdigits(self, num, k):
         """
