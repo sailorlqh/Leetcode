@@ -16,11 +16,15 @@ class Solution(object):
         	if(inorder_left > inorder_right or postorder_left > postorder_right):
         		return None
         	root = TreeNode(postorder[postorder_right])
-        	index = inorder.index(postorder[postorder_right])
+        	# index = inorder.index(postorder[postorder_right])
+        	index = a[postorder[postorder_right]]
         	root.left = helper(inorder_left,index-1, postorder_left,postorder_left + index - inorder_left - 1)
         	root.right = helper(index+1, inorder_right, postorder_left + index - inorder_left, postorder_right-1)
         	return root
         length = len(inorder)
-        
+        a = {}
+        for i in range(length):
+        	a[inorder[i]] = i
         return helper(0,length-1, 0, length-1)
+
 
